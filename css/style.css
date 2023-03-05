@@ -58,19 +58,39 @@ body {
 
 .header__nav {
     position: absolute;
-    width: 80px;
+    width: 232px;
     top: 100%;
     right: 0;
     background: white;
     display: none;
 }
 
-.header-menu:hover {
+.header__nav-btm {
+    background: none;
+    border: none;
+    margin-left: 90%;
+}
+
+.header__nav-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header__nav-list:hover {
+    cursor: pointer;
+}
+
+.header__nav-item {
+    text-decoration: none;
+}
+
+.header__nav:hover {
     display: block;
 }
 
-.header-burger:hover+.header-nav,
-.header-burger:focus+.header-nav {
+.header__button:hover+.header__nav,
+.header__button:focus+.header__nav {
     display: block;
 }
 
@@ -171,10 +191,26 @@ body {
 }
 
 .catalog__item {
+    position: relative;
     width: 360px;
     height: 581px;
     background-color: #F8F8F8;
     margin: 0 0 30px 0;
+}
+
+.catalog__item-overlay:before {
+    content: '';
+    background: rgba(58, 56, 56, 0.86);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.catalog__item-overlay:before {
+    display: none;
 }
 
 .catalog__item-imege {
@@ -205,6 +241,18 @@ body {
     margin-left: 40%;
     margin-top: 48.5px;
     margin-bottom: 95.5px;
+}
+
+.button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.catalog__item:hover .catalog__item-overlay:before {
+    display: block;
 }
 
 .service {
